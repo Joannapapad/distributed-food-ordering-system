@@ -1,166 +1,116 @@
-# Distributed Food Ordering & Management System (MapReduce + Client-Server)
+# Distributed Food Ordering Platform (Java, TCP, MapReduce)
 
 ## Overview
 
-This project is a distributed systems assignment implementing a **food ordering and restaurant management platform** using Java.
+This project is a distributed food ordering and management system built in Java. It simulates a real-world backend architecture using a **Master–Worker model**, supporting multiple clients, concurrent requests, and distributed data processing.
 
-The system simulates a real-world distributed architecture consisting of:
-- A **Master node (TCP Server)**
-- Multiple **Worker nodes**
-- A **Manager console application**
-- An **Android client application**
+The system allows:
+- Managers to register and manage stores
+- Customers to search, filter, and purchase products
+- Distributed processing of queries using a MapReduce-inspired approach
 
-The system supports restaurant registration, product management, search, purchases, and aggregation queries using a **MapReduce-inspired model**.
-
----
-
-# System Architecture
-
-## Components
-
-### 1. Master Node (Server)
-- Implemented in Java using **TCP sockets**
-- Acts as the central coordinator
-- Handles:
-  - Client requests (search, purchase)
-  - Worker communication
-  - Load balancing using hashing
-  - MapReduce-style query processing
+The goal of the project is to demonstrate concepts from:
+- Distributed systems
+- Multithreading and synchronization
+- Network programming (TCP sockets)
+- Data partitioning and aggregation
 
 ---
 
-### 2. Worker Nodes
-- Implemented in Java
-- Multi-threaded
-- Store restaurant data **in-memory only**
-- Handle:
-  - Store data management
-  - Product updates
-  - Purchase processing
-- Communicate with Master via TCP
+## System Architecture
+
+The system is composed of four main components:
+
+### Master Node
+The Master acts as the central coordinator of the system.
+
+Responsibilities:
+- Accepts client and manager requests via TCP
+- Distributes stores across workers using hashing
+- Executes MapReduce-style queries
+- Coordinates purchase operations
+- Handles concurrency between multiple clients and workers
 
 ---
 
-### 3. Manager Console Application
-- Java console application
-- Used for:
-  - Adding restaurants
-  - Managing products (add/remove/update stock)
-  - Viewing sales per product/category
-- Sends store data to Master in JSON format
+### Worker Nodes
+Workers are responsible for storing and managing store data.
+
+Responsibilities:
+- Store restaurant and product data (in memory)
+- Handle product updates and stock changes
+- Process purchase requests
+- Return results to the Master
+
+Each worker runs as a multi-threaded server and communicates only with the Master.
 
 ---
 
-### 4. Android Client Application
-- User interface for customers
-- Communicates with Master using TCP sockets
-- Provides:
-  - Store search
-  - Filtering
-  - Purchase functionality
-  - Ratings system
+### Manager Application (Console)
+A command-line interface used to manage the system.
 
----
-
-# Features
-
-## Manager Features
-
-- Add new stores
+Features:
+- Add new stores (via JSON input)
 - Add / remove products
-- Update product stock
-- View total sales per product
-- View aggregated sales per category
-- Console-based interface
+- Update product availability
+- View aggregated sales statistics
 
 ---
 
-## Customer Features
+### Customer Application (Android)
+A mobile interface that allows users to interact with the system.
 
-- View stores within 5km radius
-- Filter stores by:
+Features:
+- Search for nearby stores (within 5 km)
+- Apply filters:
   - Food category
-  - Rating (stars)
-  - Price category ($, $$, $$$)
-- View product lists
+  - Rating
+  - Price range ($, $$, $$$)
+- View store details and products
 - Purchase products
-- Rate stores (1–5 stars)
+- Rate stores
+
+All communication is done asynchronously using TCP sockets.
 
 ---
 
-## Pricing Logic
+## Data Distribution
 
-Store price category is calculated automatically:
-
-- Average price ≤ 5€ → `$`
-- Average price ≤ 15€ → `$$`
-- Average price > 15€ → `$$$`
-
----
-
-# Distributed System Design
-
-## Master-Worker Communication
-
-- Master assigns workers using hash function:
-```
-
-NodeId = H(storeName) % NumberOfNodes
+Stores are distributed across workers using a hash function:
 
 ```
 
-- Communication is done exclusively via **TCP sockets**
-
----
-
-## Concurrency
-
-- Master is **multi-threaded**
-- Workers are **multi-threaded**
-- Synchronization handled using:
-- `synchronized`
-- `wait() / notify()`
-
-(No external concurrency libraries used)
-
----
-
-## MapReduce Model
-
-### Map Function
-Transforms:
-```
-
-(key, value) → [(key2, value2)]
-
-```
-
-Used for:
-- Filtering stores
-- Processing distributed data
-
----
-
-### Reduce Function
-Aggregates:
-```
-
-(key2, [value2]) → final result
+NodeId = H(storeName) % NumberOfWorkers
 
 ````
 
-Used for:
-- Sales per product
-- Sales per category
-- Aggregated statistics
+This ensures:
+- Load balancing
+- Scalable data distribution
 
 ---
 
-# Data Format
+## MapReduce Processing
 
-Stores are provided in JSON format:
+The system uses a MapReduce-inspired model to process queries across workers.
 
-```
+### Map Phase
+Each worker processes its local data and returns partial results.
+
+### Reduce Phase
+The Master aggregates results from all workers into a final response.
+
+Used for:
+- Store search filtering
+- Sales aggregation queries
+
+---
+
+## Store Data Format
+
+Stores are defined using JSON:
+
+```json
 {
   "StoreName": "Pizza Fun",
   "Latitude": 37.9932963,
@@ -168,133 +118,119 @@ Stores are provided in JSON format:
   "FoodCategory": "pizzeria",
   "Stars": 3,
   "NoOfVotes": 15,
-  "StoreLogo": "/usr/bin/images/storeLogo.png",
+  "StoreLogo": "/path/to/logo.png",
   "Products": [
     {
       "ProductName": "margarita",
       "ProductType": "pizza",
       "Available Amount": 5000,
       "Price": 9.2
-    },
-    {
-      "ProductName": "special",
-      "ProductType": "pizza",
-      "Available Amount": 1000,
-      "Price": 12
-    },
-    {
-      "ProductName": "chef’s Salad",
-      "ProductType": "salad",
-      "Available Amount": 100,
-      "Price": 5
     }
   ]
 }
-
-
----
-
-# Purchase Workflow
-
-1. Client sends filters to Master
-2. Master executes MapReduce query
-3. Stores are returned to client
-4. Client selects store/products
-5. Purchase request sent to Master
-6. Master forwards request to Worker
-7. Worker updates:
-   - stock
-   - revenue
-8. Synchronization ensures correctness under concurrent purchases
-
----
-
-# Sales Aggregation Queries
-
-## By Food Category
-Example:
 ````
 
+---
+
+## Pricing Categories
+
+Price category is calculated automatically:
+
+* `$` → average price ≤ 5€
+* `$$` → average price ≤ 15€
+* `$$$` → average price > 15€
+
+---
+
+## Purchase Flow
+
+1. User searches for stores
+2. Master retrieves matching results using MapReduce
+3. User selects products
+4. Purchase request is sent to Master
+5. Master forwards request to the responsible worker
+6. Worker updates:
+
+   * product stock
+   * store revenue
+
+Thread synchronization ensures correct handling of concurrent purchases.
+
+---
+
+## Aggregation Queries
+
+Managers can retrieve statistics such as:
+
+### Sales per Store (by category)
+
+Example:
+
+```
 Input: pizzeria
-Output:
 Pizza Fun: 100
 Pizza Hat: 50
 Total: 150
-
 ```
 
----
+### Sales per Product Category
 
-## By Product Category
 Example:
-```
 
+```
 Input: salad
-Output:
 Pizza Fun: 10
 Pizza Hat: 5
-Salad Minus: 75
+Other: 75
 Total: 90
-
 ```
 
 ---
 
-# Concurrency & Synchronization
+## Concurrency & Synchronization
 
-- Thread-safe updates required for:
-  - Stock updates
-  - Revenue updates
-  - Concurrent purchases
+The system is fully multi-threaded:
 
-- Implemented using:
-  - synchronized blocks
-  - wait / notify mechanisms
+* Master handles multiple clients simultaneously
+* Workers process requests in parallel
+* Shared data is protected using:
 
----
+  * synchronized blocks
+  * wait / notify
 
-# Restrictions
-
-- No database usage
-- Data stored in memory only
-- Only Java TCP sockets allowed for communication
-- No external concurrency libraries allowed
+No external concurrency libraries are used.
 
 ---
 
-# Bonus Feature (Optional)
+## Constraints
 
-- Active replication of worker nodes
-- Fault tolerance via backup replicas
-- Automatic failover routing if a worker fails
-
----
-
-# Project Phases
-
-## Phase A
-- Backend system (Master + Workers)
-- Manager console app
-- Dummy client for testing
-
-## Phase B
-- Full Android application
-- Complete system integration
-- Sales aggregation queries implemented
+* No database (all data stored in memory)
+* Communication strictly via TCP sockets
+* No use of external frameworks for networking or concurrency
 
 ---
 
-# Technologies Used
+## Bonus (Optional)
 
-- Java
-- TCP Sockets
-- Multithreading
-- MapReduce-inspired processing
-- JSON data handling
-- Android (client side)
+Support for **active replication**:
+
+* Data is replicated across multiple workers
+* Fault tolerance in case of node failure
+* Automatic request redirection to replicas
 
 ---
 
-# Author
+## Technologies
+
+* Java
+* TCP Sockets
+* Multithreading
+* JSON
+* Android (client application)
+* MapReduce concepts
+
+---
+
+## Author
 
 Joanna Papadakaki
