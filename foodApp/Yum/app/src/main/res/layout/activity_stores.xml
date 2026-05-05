@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.StoresActivity">
+
+    <ScrollView
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation = "vertical"
+            android:padding = "16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                layout="@layout/toolbar"
+                android:id="@+id/toolbar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <ImageView
+                android:id="@+id/storeLogo"
+                android:layout_width="142dp"
+                android:layout_height="145dp"
+                android:layout_below="@id/toolbar_layout"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/storeName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Store Name"
+                android:textColor="@color/brown"
+                android:textSize="24sp"
+                android:layout_marginTop="8dp"
+                android:textStyle="bold"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/storeInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Category | ★ ★ ★ ★ ✰ | $$"
+                android:textColor="@color/brown"
+                android:layout_marginTop="4dp"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:text="Products"
+                android:textColor="@color/brown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_marginTop="12dp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/productsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="289dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:nestedScrollingEnabled="false"
+                android:overScrollMode="never"
+                android:layout_above="@id/checkoutButton"
+                android:textColor="@color/brown" />
+
+            <Button
+                android:id="@+id/checkoutButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/productsRecyclerView"
+                android:text = "Checkout"
+                android:layout_marginTop="16dp"
+                android:visibility="visible" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <include
+        layout="@layout/toolbar"
+        android:id="@+id/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!-- Cart Icon at Top-Right -->
+    <ImageButton
+        android:id="@+id/reviews_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/toolbar_layout"
+        android:background="?android:selectableItemBackgroundBorderless"
+        android:contentDescription="Cart"
+        android:src="@drawable/add_comment"
+        app:tint="@color/brown" />
+
+    <!-- SearchView instead of EditText, to the start of cart button -->
+    <SearchView
+        android:id="@+id/search_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@id/reviews_button"
+        android:layout_alignTop="@id/reviews_button"
+        android:layout_marginEnd="8dp"
+        android:iconifiedByDefault="false"
+        android:queryHint="Search by store name..." />
+
+    <!-- Filter Button below search view -->
+    <Button
+        android:id="@+id/filter_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_view"
+        android:layout_marginTop="8dp"
+        android:text="Open Filters" />
+
+    <!-- ListView below everything -->
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/filter_button"
+        android:layout_marginTop="8dp"/>
+</RelativeLayout>

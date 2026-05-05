@@ -1,0 +1,29 @@
+{
+  "StoreName": "Tortellino",
+  "Latitude": 43.5943032,
+  "Longitude": 67.4434932,
+  "FoodCategory": "italian",
+  "Stars": 5,
+  "NoOfVotes": 340,
+  "StoreLogo": "image4.png",
+  "Products": [
+    {
+      "ProductName": "margarita",
+      "ProductType": "pizza",
+      "Available Amount": 140,
+      "Price": 16
+    },
+    {
+      "ProductName": "carbonara",
+      "ProductType": "pasta",
+      "Available Amount": 5000,
+      "Price": 24
+    },
+    {
+      "ProductName": "gnocchi",
+      "ProductType": "pasta",
+      "Available Amount": 340,
+      "Price": 27
+    }
+  ]
+}

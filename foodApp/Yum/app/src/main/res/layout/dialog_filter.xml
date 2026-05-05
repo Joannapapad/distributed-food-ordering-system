@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/min_stars"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Minimum Stars (1-5)"
+        android:textColor="@color/brown"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/min_votes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Minimum Votes"
+        android:textColor="@color/brown"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/store_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Store Category" />
+
+    <Spinner
+        android:id="@+id/price_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Price Category" />
+    />
+
+</LinearLayout>

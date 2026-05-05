@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="foodApp:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/foodApp_jar</output-path>
+    <root id="archive" name="foodApp.jar">
+      <element id="module-output" name="foodApp" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/json/json/20210307/json-20210307.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.13.0/jackson-core-2.13.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.13.0/jackson-annotations-2.13.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.13.0/jackson-databind-2.13.0.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

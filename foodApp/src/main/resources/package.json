@@ -1,0 +1,330 @@
+[
+  {
+    "StoreName": "Wrapzilla",
+    "Latitude": 95.43959242,
+    "Longitude": 54.54350205,
+    "FoodCategory": "ethnic",
+    "Stars": 5,
+    "NoOfVotes": 53,
+    "StoreLogo": "wrapzilla.png",
+    "Products": [
+      {
+        "ProductName": "chicken buritto",
+        "ProductType": "wrap",
+        "Available Amount": 500,
+        "Price": 9.5
+      },
+      {
+        "ProductName": "beef buritto",
+        "ProductType": "wrap",
+        "Available Amount": 350,
+        "Price": 8
+      },
+      {
+        "ProductName": "mexican salad",
+        "ProductType": "salad",
+        "Available Amount": 120,
+        "Price": 12.2
+      }
+    ]
+  }
+,
+  {
+    "StoreName": "Sushi Drift",
+    "Latitude": 78.9932954,
+    "Longitude": 53.733713,
+    "FoodCategory": "asian",
+    "Stars": 5,
+    "NoOfVotes": 27,
+    "StoreLogo": "sushi_drift.png",
+    "Products": [
+      {
+        "ProductName": "california rolls",
+        "ProductType": "sushi",
+        "Available Amount": 500,
+        "Price": 9.5
+      },
+      {
+        "ProductName": "maki rolls",
+        "ProductType": "sushi",
+        "Available Amount": 350,
+        "Price": 13.5
+      },
+      {
+        "ProductName": "shrimp bun",
+        "ProductType": "bun",
+        "Available Amount": 120,
+        "Price": 12.2
+      }
+    ]
+  }
+,
+  {
+    "StoreName": "Pizza Nova",
+    "Latitude": 60.9932963,
+    "Longitude": 20.733413,
+    "FoodCategory": "pizzeria",
+    "Stars": 2,
+    "NoOfVotes": 20,
+    "StoreLogo":"pizza_nova.png",
+    "Products": [
+      {
+        "ProductName": "margarita",
+        "ProductType": "pizza",
+        "Available Amount": 500,
+        "Price": 10
+      },
+      {
+        "ProductName": "bbq",
+        "ProductType": "pizza",
+        "Available Amount": 250,
+        "Price": 13.5
+      },
+      {
+        "ProductName": "avocado Salad",
+        "ProductType": "salad",
+        "Available Amount": 120,
+        "Price": 8
+      }
+    ]
+  }
+,
+  {
+    "StoreName": "Maki Maze",
+    "Latitude": 23.9922963,
+    "Longitude": 25.733413,
+    "FoodCategory": "asian",
+    "Stars": 3,
+    "NoOfVotes": 14,
+    "StoreLogo": "maki_maze.png",
+    "Products": [
+      {
+        "ProductName": "chicken bun",
+        "ProductType": "bun",
+        "Available Amount": 100,
+        "Price": 7.8
+      },
+      {
+        "ProductName": "california rolls",
+        "ProductType": "sushi",
+        "Available Amount": 500,
+        "Price": 10
+      },
+      {
+        "ProductName": "shrimp salad",
+        "ProductType": "salad",
+        "Available Amount": 75,
+        "Price": 8.5
+      }
+    ]
+  }
+,
+  {
+    "StoreName": "Leaf And Fork",
+    "Latitude": 30.9932341,
+    "Longitude": 25.554224,
+    "FoodCategory": "organic",
+    "Stars": 4,
+    "NoOfVotes": 17,
+    "StoreLogo": "leaf_and_fork.png",
+    "Products": [
+      {
+        "ProductName": "ceasar salad ",
+        "ProductType": "salad",
+        "Available Amount": 500,
+        "Price": 12.5
+      },
+      {
+        "ProductName": "beef salad",
+        "ProductType": "salad",
+        "Available Amount": 420,
+        "Price": 13
+      },
+      {
+        "ProductName": "smoothie bowl",
+        "ProductType": "smoothie",
+        "Available Amount": 150,
+        "Price": 11.5
+      }
+    ]
+  }
+,
+  {
+    "StoreName": "Green Bite",
+    "Latitude": 76.9932432,
+    "Longitude": 31.735478,
+    "FoodCategory": "organic",
+    "Stars": 4,
+    "NoOfVotes": 50,
+    "StoreLogo": "green_bite.png",
+    "Products": [
+      {
+        "ProductName": "pasta salad",
+        "ProductType": "salad",
+        "Available Amount": 400,
+        "Price": 12
+      },
+      {
+        "ProductName": "caesar salad",
+        "ProductType": "salad",
+        "Available Amount": 340,
+        "Price": 14
+      },
+      {
+        "ProductName": "smoothie bowl",
+        "ProductType": "smoothie",
+        "Available Amount": 240,
+        "Price": 12.5
+      }
+    ]
+  }
+,
+  {
+    "StoreName": "Curry Station",
+    "Latitude": 23.9942523,
+    "Longitude": 24.7333432,
+    "FoodCategory": "ethnic",
+    "Stars": 1,
+    "NoOfVotes": 34,
+    "StoreLogo": "curry_station.png",
+    "Products": [
+      {
+        "ProductName": "chicken tika masala",
+        "ProductType": "rice bowl",
+        "Available Amount": 500,
+        "Price": 5.6
+      },
+      {
+        "ProductName": "pakora bowl",
+        "ProductType": "rice bowl",
+        "Available Amount": 450,
+        "Price": 6.8
+      },
+      {
+        "ProductName": "tofu bowl",
+        "ProductType": "rice bowl",
+        "Available Amount": 120,
+        "Price": 8.5
+      }
+    ]
+  }
+,
+  {
+    "StoreName": "Cheesy Crust",
+    "Latitude": 37.9932963,
+    "Longitude": 23.733413,
+    "FoodCategory": "pizzeria",
+    "Stars": 3,
+    "NoOfVotes": 15,
+    "StoreLogo": "cheesy_crust.png",
+    "Products": [
+      {
+        "ProductName": "margarita",
+        "ProductType": "pizza",
+        "Available Amount": 100,
+        "Price": 9.2
+      },
+      {
+        "ProductName": "special",
+        "ProductType": "pizza",
+        "Available Amount": 150,
+        "Price": 12
+      },
+      {
+        "ProductName": "chef’s Salad",
+        "ProductType": "salad",
+        "Available Amount": 75,
+        "Price": 5
+      }
+    ]
+  }
+,
+  {
+    "StoreName": "Burger Burst",
+    "Latitude": 30.9932956,
+    "Longitude": 25.733423,
+    "FoodCategory": "Burger",
+    "Stars": 4,
+    "NoOfVotes": 10,
+    "StoreLogo": "burger_burst.png",
+    "Products": [
+      {
+        "ProductName": "chicken burger",
+        "ProductType": "burger",
+        "Available Amount": 500,
+        "Price": 11
+      },
+      {
+        "ProductName": "beef burger",
+        "ProductType": "burger",
+        "Available Amount": 450,
+        "Price": 10
+      },
+      {
+        "ProductName": "vegan burger",
+        "ProductType": "burger",
+        "Available Amount": 150,
+        "Price": 13.5
+      }
+    ]
+  }
+,
+  {
+    "StoreName": "Bun Planet",
+    "Latitude": 34.9932851,
+    "Longitude": 43.733323,
+    "FoodCategory": "Burger",
+    "Stars": 5,
+    "NoOfVotes": 23,
+    "StoreLogo": "bun_planet.png",
+    "Products": [
+      {
+        "ProductName": "croque Madame burger",
+        "ProductType": "burger",
+        "Available Amount": 400,
+        "Price": 15
+      },
+      {
+        "ProductName": "beef burger",
+        "ProductType": "burger",
+        "Available Amount": 500,
+        "Price": 10.5
+      },
+      {
+        "ProductName": "bbq burger",
+        "ProductType": "burger",
+        "Available Amount": 450,
+        "Price": 14
+      }
+    ]
+  },
+  {
+    "StoreName": "Al Dente House",
+    "Latitude": 23.6532345,
+    "Longitude": 25.7334562,
+    "FoodCategory": "italian",
+    "Stars": 2,
+    "NoOfVotes": 30,
+    "StoreLogo": "al_dente.png",
+    "Products": [
+      {
+        "ProductName": "carbonara",
+        "ProductType": "pasta",
+        "Available Amount": 300,
+        "Price": 10
+      },
+      {
+        "ProductName": "tortelinia",
+        "ProductType": "pasta",
+        "Available Amount": 500,
+        "Price": 12
+      },
+      {
+        "ProductName": "cacio e pepe",
+        "ProductType": "pasta",
+        "Available Amount": 75,
+        "Price": 11.5
+      }
+    ]
+  }
+]
