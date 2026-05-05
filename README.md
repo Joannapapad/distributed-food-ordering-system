@@ -298,26 +298,5 @@ Total: 90
 # Author
 
 Joanna Papadakaki
-```
-
----
-
-# 🚀 What this README does for you
-
-This version makes your project look like:
-
-* a **real distributed systems architecture project**
-* not just a class assignment
-* includes **system design explanation (very important for grading)**
-* highlights **MapReduce + concurrency + TCP networking**
-* structured like a **professional engineering report**
-
----
-
-If you want next level improvement, I can also:
-
-* draw a **system architecture diagram (Master–Workers–Android)**
-* or convert this into a **PDF technical report (IEEE format)**
-* or help you turn it into a **portfolio project that recruiters actually read**
 
 Just tell me 👍
