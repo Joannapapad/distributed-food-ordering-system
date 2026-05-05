@@ -160,7 +160,7 @@ Used for:
 
 Stores are provided in JSON format:
 
-```json id="store_json_example"
+```
 {
   "StoreName": "Pizza Fun",
   "Latitude": 37.9932963,
@@ -298,5 +298,3 @@ Total: 90
 # Author
 
 Joanna Papadakaki
-
-Just tell me 👍
